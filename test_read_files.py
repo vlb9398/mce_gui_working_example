@@ -1,6 +1,5 @@
 import numpy as np
 import os, sys, time, logging, mce_data, subprocess
-import netcdf as nc
 import datetime as dt
 from termcolor import colored
 import mce_data
