@@ -4,7 +4,6 @@ import sys, os, subprocess, time, datetime, socket, struct, threading
 import pyqtgraph as pg
 from test_read_files import fc
 import random as rm
-import netcdf as nc
 import settings as st
 from termcolor import colored
 import time
