@@ -4,7 +4,6 @@ import sys, os, subprocess, time, datetime, socket, struct, threading
 import pyqtgraph as pg
 from test_read_files import fc
 import random as rm
-import settings as st
 from termcolor import colored
 import time
 import multiprocessing as mp
@@ -115,7 +114,7 @@ class mcegui(QtGui.QWidget):
         elif self.showmcedata == 'No':
             self.submitbutton.setEnabled(False)
         else:
-            parafile = open('tempfiles/tempparameters.txt', 'w')
+            parafile = open('tempfiles/tempparameters.txt', 'w+')
             parafile.write(self.observer+' ')
             parafile.write(str(self.datamode)+' ')
             parafile.write(str(self.readoutcard)+' ')
@@ -497,7 +496,6 @@ class File_Checker(QtCore.QObject):
     def __init__(self, start_signal):
         super(File_Checker,self).__init__()
         start_signal.connect(self._run)
-        self.msg_from_job = None
 
     def _run(self):
         queue = mp.Queue()
